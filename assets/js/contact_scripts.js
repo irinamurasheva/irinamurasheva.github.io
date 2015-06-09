@@ -80,34 +80,22 @@ $(document).ready(function(){
             var data_of_form = $(this).serialize();
 
             $.ajax({
-                url: 'assets/php/contact.php',
+                url: 'https://formkeep.com/f/54ce5131b4f1',
                 data: data_of_form,
                 type: 'POST',
                 success: function(data) {
-                    if ( data == "success" )
-                    {
-                        $("#user-name").val("");
-                        $("#user-email").val("");
-                        $("#user-message").val("");
+                    $("#user-name").val("");
+                    $("#user-email").val("");
+                    $("#user-message").val("");
 
-                        $(".info-message-form p").text("Message sent!");
-                        $(".info-message-form").addClass('success');
-                        setTimeout(
-                            function(){
-                                $(".info-message-form").removeClass('success');
-                                $(".info-message-form p").text("");
-                            }, 5000
-                        );
-                    } else {
-                        $(".info-message-form p").text("Error");
-                        $(".info-message-form").addClass('error');
-                        setTimeout(
-                            function(){
-                                $(".info-message-form").removeClass('error').fadeOut(500);
-                                $(".info-message-form p").text("");
-                            }, 5000
-                        );
-                    }
+                    $(".info-message-form p").text("Message sent!");
+                    $(".info-message-form").addClass('success');
+                    setTimeout(
+                        function(){
+                            $(".info-message-form").removeClass('success');
+                            $(".info-message-form p").text("");
+                        }, 5000
+                    );
                 },
                 error: function(){
                     alert("te1");
